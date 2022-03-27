@@ -26,7 +26,8 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
-      { src: '/~partytown/partytown.js' },
+      { src: '/~partytown/debug/partytown.js' },
+      { src: '/js/partytown.js' },
       { type: 'text/partytown', src: '/js/gtag.js' },
     ],
   },

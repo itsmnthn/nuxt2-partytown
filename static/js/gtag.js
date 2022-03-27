@@ -6,7 +6,7 @@
   const script = document.createElement('script')
   script.async = true
   script.type = 'text/partytown'
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-21NM1T1TEG'
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=xxxxx'
   document.head.appendChild(script)
 
   window.dataLayer = window.dataLayer || []
@@ -15,5 +15,5 @@
   }
   gtag('js', new Date())
 
-  gtag('config', 'G-21NM1T1TEG')
+  gtag('config', 'xxxxx', { debug_mode: true })
 })()
