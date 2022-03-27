@@ -1,7 +1,15 @@
 <!-- Please remove this file from your project -->
 <template>
   <div
-    class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
+    class="
+      relative
+      flex
+      items-top
+      justify-center
+      min-h-screen
+      bg-gray-100
+      sm:items-center sm:pt-0
+    "
   >
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
@@ -111,6 +119,17 @@
             /></svg
         ></a>
       </div>
+
+      <h2 class="flex">
+        <nuxt-link class="text-green-500" :to="'/partytown'">
+          PartyTown page
+        </nuxt-link>
+        <nuxt-link class="text-green-500" style="margin-left: auto" :to="'/'">
+          home
+        </nuxt-link>
+      </h2>
+
+      <div>Gtag will not track pages/VueRouter</div>
     </div>
   </div>
 </template>

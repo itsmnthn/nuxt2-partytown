@@ -1,3 +1,10 @@
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const path = require('path')
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const CopyPlugin = require('copy-webpack-plugin')
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const partytown = require('@builder.io/partytown/utils')
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -18,6 +25,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      { src: '/~partytown/partytown.js' },
+      { type: 'text/partytown', src: '/js/gtag.js' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,5 +50,16 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    plugins: [
+      new CopyPlugin({
+        patterns: [
+          {
+            from: partytown.libDirPath(),
+            to: path.join(__dirname, 'static', '~partytown'),
+          },
+        ],
+      }),
+    ],
+  },
 }

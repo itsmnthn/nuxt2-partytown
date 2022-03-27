@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <Tutorial />
-  </div>
+  <Tutorial />
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'PartyTown',
 }
 </script>
